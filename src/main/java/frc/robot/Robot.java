@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Hatch;
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Shooter;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,8 +31,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Drivetrain m_Drivetrain;
   public static Hatch m_Hatch = new Hatch();
-  public static Intake m_Intake = new Intake();
-  public static Shooter m_Shooter = new Shooter();
+  public static Cargo m_Cargo = new Cargo();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

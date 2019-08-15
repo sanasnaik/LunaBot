@@ -12,20 +12,26 @@ import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
-
 /**
  * Add your docs here.
  */
-public class Shooter extends Subsystem {
+public class Cargo extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  VictorSPX intakevictor = new VictorSPX(RobotMap.VICTOR_INTAKE_PORT);
   VictorSPX shootervictor = new VictorSPX(RobotMap.VICTOR_SHOOTER_PORT);
 
+  shootervictor.follow(intakevictor);
+  
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
   }
-  public void shootball() {
-    shootervictor.set(ControlMode.PercentOutput, 1.0);
+  public void intakeball() {
+    intakevictor.set(ControlMode.PercentOutput, 1.0);
+  }
+  public void reversecargo() {
+    intakevictor.set(ControlMode.PercentOutput, -1.0);
+
   }
 }

@@ -10,9 +10,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ExtendHatch;
 import frc.robot.commands.RetractHatch;
-import frc.robot.commands.BallIntake;
-import frc.robot.commands.BallShooter;
-
+import frc.robot.commands.ReverseCargo;
+import frc.robot.commands.IntakeShooter;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -33,9 +32,13 @@ public class OI {
   public JoystickButton intakeshooterButton = new JoystickButton(driverController, 3);
 
   public void intakeshooterButton() {
-    intakeshooterButton.whileHeld(new BallIntake());
-    intakeshooterButton.whileHeld(new BallShooter());
-   }
+    intakeshooterButton.whileHeld(new IntakeShooter());
+  }  
+  public JoystickButton reverseButton = new JoystickButton(driverController, 4);
+  
+  public void reverseButton() {
+    reverseButton.whileHeld(new ReverseCargo());
+  }
   
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
