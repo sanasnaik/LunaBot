@@ -28,9 +28,11 @@ public class RobotMap {
 
   public static final int OI_DRIVER_CONTROLLER = 1;
 
-  public static final int SOLENOID_PORT_1 = 3;
-  public static final int SOLENOID_PORT_2 = 4;
+ // public static final int SOLENOID_PORT_1 = 3;
+ // public static final int SOLENOID_PORT_2 = 4;
 
   public static final int VICTOR_INTAKE_PORT = 5;
   public static final int VICTOR_SHOOTER_PORT = 6;
+
+  public static final int HATCH_MOTOR_PORT = 7;
 }

@@ -10,14 +10,27 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 /**
  * Add your docs here.
  */
 public class Hatch extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
- DoubleSolenoid doublesolenoid = new DoubleSolenoid(RobotMap.SOLENOID_PORT_1, RobotMap.SOLENOID_PORT_2);
+TalonSRX hatchtalon = new TalonSRX(RobotMap.HATCH_MOTOR_PORT);
 
+public void extendhatch() {
+  hatchtalon.set(ControlMode.PercentOutput, 0.5);
+}
+public void retracthatch() {
+  hatchtalon.set(ControlMode.PercentOutput, -0.5);
+}
+public void turnoffhatch() {
+  hatchtalon.set(ControlMode.PercentOutput, 0);
+}
+/** DoubleSolenoid doublesolenoid = new DoubleSolenoid(RobotMap.SOLENOID_PORT_1, RobotMap.SOLENOID_PORT_2);
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
@@ -32,4 +45,6 @@ public class Hatch extends Subsystem {
   public void turnoffhatch() {
     doublesolenoid.set(DoubleSolenoid.Value.kOff);
   }
+*/
 }
+

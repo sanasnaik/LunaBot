@@ -29,10 +29,10 @@ public Cargo() {
     // Set the default command for a subsystem here.
   }
   public void intakeshooter() {
-    intakevictor.set(ControlMode.PercentOutput, 1.0);
+    intakevictor.set(ControlMode.PercentOutput, 0.5);
   }
   public void reverseCargo() {
-    intakevictor.set(ControlMode.PercentOutput, -1.0);
+    intakevictor.set(ControlMode.PercentOutput, -0.5);
   }
   public void stopCargo () {
     intakevictor.set(ControlMode.PercentOutput, 0.0);
